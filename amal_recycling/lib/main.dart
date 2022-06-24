@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
                 primarySwatch: Colors.green,
                 primaryColor: Colors.green,
               ),
-              home: OnBoardingScreen() //LayoutApp(),
+              home: OnBoardingScreen() //LayoutApp( ),
               );
         },
       ),
