@@ -19,9 +19,11 @@ class OnBoardingScreen extends StatefulWidget {
 class bordringmodel {
   String image1;
   String title;
-  String body;
+ // String body;
   bordringmodel(
-      {required this.image1, required this.title, required this.body});
+      {required this.image1, required this.title,
+      // required this.body
+       });
 }
 
 bool islast = false;
@@ -31,19 +33,22 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   List<bordringmodel> bordring = [
     bordringmodel(
         image1:
-            "https://img.freepik.com/free-vector/online-shopping-abstract-concept-illustration_335657-3714.jpg?t=st=1653053211~exp=1653053811~hmac=4badcf855f9f20f68ee4e423203e35ff96120100047932133de910a40f050ec2&w=740",
-        title: "title1",
-        body: "body1"),
+            "https://img.freepik.com/free-vector/people-sorting-garbage-recycling_53876-59907.jpg?t=st=1655965544~exp=1655966144~hmac=9d8c6db01694a445a9632d0514dea25c116bc5a8e2c2a6e8bc4fa6785d6c194b&w=900",
+        title: "Collect",
+        //body: "body1"
+        ),
     bordringmodel(
         image1:
-            "https://img.freepik.com/free-vector/people-standing-holding-shopping-bags_23-2148825441.jpg?size=626&ext=jpg&uid=R34164859&ga=GA1.2.1474716804.1645288850",
-        title: "title2",
-        body: "body2"),
+            "https://img.freepik.com/free-vector/recycle-symbol-environmental-conservation-vector_53876-76254.jpg?size=338&ext=jpg&ga=GA1.2.1474716804.1645288850",
+        title: "Recycle",
+       // body: "body2"
+        ),
     bordringmodel(
         image1:
-            "https://img.freepik.com/free-vector/online-shopping-concept-illustration_114360-1084.jpg?size=626&ext=jpg&uid=R34164859&ga=GA1.2.1474716804.1645288850",
-        title: "title3",
-        body: "body3")
+            "https://img.freepik.com/free-vector/happy-businessman-earning-money-illustration_74855-5522.jpg?size=626&ext=jpg&ga=GA1.2.1474716804.1645288850",
+        title: "Earn",
+       // body: "body3"
+        )
   ];
   var _pagecontroller = PageController();
   Widget build(BuildContext context) {
@@ -93,9 +98,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           style: TextStyle(
                               fontSize: 40, fontWeight: FontWeight.bold),
                         ),
-                        Text("${bordring[index].body}",
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w400))
+                        // Text("${bordring[index].body}",
+                        //     style: TextStyle(
+                        //         fontSize: 20, fontWeight: FontWeight.w400))
                       ],
                     ),
                   );
@@ -109,7 +114,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     count: bordring.length,
                     effect: const ExpandingDotsEffect(
                         dotColor: Colors.grey,
-                        activeDotColor: Colors.blue,
+                        activeDotColor: Colors.green,
                         dotHeight: 10,
                         dotWidth: 10,
                         expansionFactor: 4,

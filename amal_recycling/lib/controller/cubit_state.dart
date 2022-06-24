@@ -9,3 +9,5 @@ class IndexBottomNavigatorState extends Projectstate {}
 class Countermimusstate extends Projectstate {}
 
 class Counttotalstate extends Projectstate {}
+
+class Myorderdatastate extends Projectstate {}

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_conditional_rendering/flutter_conditional_rendering.dart';
 import 'package:graduation/componants/componant.dart';
+import 'package:graduation/componants/constunt.dart';
 import 'package:graduation/dio_helper/cashe_helper.dart';
 import 'package:graduation/ui/profile.dart';
 // import 'package:flutter_conditional_rendering/conditional.dart';
@@ -130,7 +131,7 @@ class login_screen extends StatelessWidget {
                               },
                               widgetBuilder: (context) {
                                 return RaisedButton(
-                                  color: Colors.blue,
+                                  color:deffultcolor,
                                   child: Text(
                                     "login",
                                     style: Theme.of(context)

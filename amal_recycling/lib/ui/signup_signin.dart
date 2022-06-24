@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graduation/ui/task_screen.dart';
+
 
 
 
@@ -148,10 +148,10 @@ final nameController = TextEditingController();
                         Text(_authMode == AuthMode.Login ? 'LOGIN' : 'SIGN UP'),
                       onPressed: (){_submit;
                       if(_authData['email']==_authData1['email'] && _authData['password']==_authData1['password'] ){
-                        Navigator.push(
-                       context,
-                         MaterialPageRoute(builder: (context) => taskScreen()),
-                      );
+                      //   Navigator.push(
+                      //  context,
+                      //    MaterialPageRoute(builder: (context) => taskScreen()),
+                      // );
                       }
                       
                       },

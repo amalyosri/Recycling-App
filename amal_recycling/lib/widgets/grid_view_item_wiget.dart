@@ -69,25 +69,23 @@ class GridViewItemWiget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             InkWell(
-                              child: CircleAvatar(
+                              child: const CircleAvatar(
                                 radius: 12,
                                 child: Text("-"),
                               ),
                               onTap: () {
-                                CubitProject.get(context).minuscount();
+                                //CubitProject.get(context).minuscount(0,);
                               },
                             ),
                             const SizedBox(
                               width: 20,
                             ),
-                            Container(
-                              child: Text("${CubitProject.itemCounte}"),
-                            ),
+                            Text("${CubitProject.itemCounte}"),
                             const SizedBox(
                               width: 20,
                             ),
                             InkWell(
-                              child: CircleAvatar(
+                              child: const CircleAvatar(
                                 radius: 12,
                                 child: Text("+"),
                               ),

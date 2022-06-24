@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import '../controller/cubit_project.dart';
+
 void finash_navigate(context,widgit){
   Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: ( context) =>widgit),
   (route)=>false
@@ -46,3 +48,8 @@ break;
 
 return color;
 }
+
+
+// Widget detailsItem(){
+
+// }

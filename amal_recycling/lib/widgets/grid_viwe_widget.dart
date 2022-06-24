@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graduation/constant.dart';
+
 import 'package:graduation/controller/cubit_project.dart';
 import 'package:graduation/controller/cubit_state.dart';
-import 'package:graduation/ui/waste_basket_screen.dart';
+import 'package:graduation/ui/cart_order_details_screen.dart';
+import 'package:graduation/widgets/grid_view_item_wiget%20copy.dart';
 import 'package:graduation/widgets/grid_view_item_wiget.dart';
 
+import '../componants/database.dart';
+
 class GridviweWidget extends StatelessWidget {
-  const GridviweWidget({Key? key}) : super(key: key);
+  List<dynamic> contant;
+
+  GridviweWidget({required this.contant});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class GridviweWidget extends StatelessWidget {
         return Container(
           padding: const EdgeInsets.all(10.0),
           child: GridView.builder(
-            itemCount: plastic_contant.length,
+            itemCount: contant.length,
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               crossAxisSpacing: 15,
               mainAxisSpacing: 15,
@@ -25,12 +30,10 @@ class GridviweWidget extends StatelessWidget {
               // mainAxisExtent: 170,
             ),
             itemBuilder: (BuildContext context, int index) {
-              return GridViewItemWiget(
+              return GridViewItemWigetCopy(
                 index: index,
-                title: plastic_contant[index].title,
-                point: plastic_contant[index].point,
-                image: plastic_contant[index].image,
-                // count: plastic_contant[index].count,/
+                model: contant[index],
+                contant: contant,
               );
             },
           ),

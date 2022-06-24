@@ -5,8 +5,9 @@ import 'package:graduation/controller/cubit_state.dart';
 import 'package:graduation/widgets/bottom_navigation_widget.dart';
 import 'package:graduation/widgets/grid_viwe_widget.dart';
 
-import '../constant.dart';
-import 'waste_basket_screen.dart';
+import '../componants/database.dart';
+import 'infoform.dart';
+import 'cart_order_details_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -51,8 +52,8 @@ class HomeScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "${CubitProject.totalpoint}",
-                                // "${CubitProject.totalpoint} point - $totalprice1 LE",
+                                // "${CubitProject.totalPointsOfPaper.toStringAsFixed(2)}",
+                                "${CubitProject.totalpoint.toStringAsFixed(2)} point - ${CubitProject.totalprice.toStringAsFixed(2)} LE",
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 18,
@@ -61,22 +62,27 @@ class HomeScreen extends StatelessWidget {
                               const SizedBox(
                                 height: 10,
                               ),
-                              const Text(
-                                "Minimum 50 points",
-                                style: TextStyle(
-                                  color: Colors.red,
-                                  fontSize: 18,
-                                ),
-                              )
+                              // const Text(
+                              //   "Minimum 50 points",
+                              //   style: TextStyle(
+                              //     color: Colors.red,
+                              //     fontSize: 18,
+                              //   ),
+                              // )
                             ],
                           ),
-                          RaisedButton(
-                            child: Text("Next"),
+                          ElevatedButton(
+                            // color: Colors.green,
+
+                            child: Text(
+                              "Next",
+                              style: TextStyle(color: Colors.white),
+                            ),
                             onPressed: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => wastebasket()),
+                                    builder: (context) => InfoForm()),
                               );
                             },
                           ),
@@ -101,20 +107,19 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      GridviweWidget(),
-                      GridviweWidget(),
-                      GridviweWidget(),
-                      GridviweWidget(),
-                      GridviweWidget(),
-                      GridviweWidget(),
-                      GridviweWidget(),
+                      GridviweWidget(contant: plastic_contant),
+                      GridviweWidget(contant: paper_contant),
+                      GridviweWidget(contant: cooking_contant),
+                      GridviweWidget(contant: electronics_contant),
+                      GridviweWidget(contant: metals_contant),
+                      GridviweWidget(contant: home_contant),
+                      GridviweWidget(contant: spareparts),
                     ],
                   ),
                 ),
               ],
             ),
           ),
-          bottomNavigationBar: BottomNavigationWidget(),
         );
       },
     );
