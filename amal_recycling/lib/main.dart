@@ -28,7 +28,7 @@ void main() async {
 
       if (onboarding != null) {
         if (token1 != null) {
-          widget1 = HomeScreen();
+          widget1 = LayoutApp();
         } else {
           widget1 = login_screen();
         }
@@ -53,14 +53,15 @@ class MyApp extends StatelessWidget {
         listener: (BuildContext context, state) {},
         builder: (BuildContext context, state) {
           return MaterialApp(
-              title: 'Flutter Demo',
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                primarySwatch: Colors.green,
-                primaryColor: Colors.green,
-              ),
-              home: OnBoardingScreen() //LayoutApp( ),
-              );
+            title: 'Flutter Demo',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.green,
+              primaryColor: Colors.green,
+            ),
+            home: // widget1
+                LayoutApp(),
+          );
         },
       ),
     );

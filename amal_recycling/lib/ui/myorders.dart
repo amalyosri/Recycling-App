@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation/ui/layoutapp.dart';
 
 import '../componants/componant.dart';
+import '../componants/database.dart';
 import '../controller/cubit_project.dart';
 import '../controller/cubit_state.dart';
 import '../widgets/bottom_navigation_widget.dart';
@@ -13,10 +14,8 @@ import 'home_screen.dart';
 class MyOrders extends StatelessWidget {
   Map<String, String>? authData;
   bool? isNewOrder;
-  MyOrders({
-    this.authData,
-    this.isNewOrder,
-  });
+  Contant? model;
+  MyOrders({this.authData, this.isNewOrder, this.model});
   // Random random = new Random();
 
   @override
@@ -116,7 +115,10 @@ class MyOrders extends StatelessWidget {
                         ),
                         onPressed: () {
                           // CubitProject.get(context).myorderdata();
-                          // CubitProject.totalpoint=0;
+                          CubitProject.totalpoint = 0;
+                          //  CubitProject.itemCounte = 0;
+                          // CubitProject.itemPoints = 0;
+                          //model?.count = 0;
                           //  _authData["name"]="";
                           //    _authData["phone"]="";
                           //     _authData["address"]="";

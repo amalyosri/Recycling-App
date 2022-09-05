@@ -5,6 +5,7 @@ import 'package:graduation/controller/cubit_project.dart';
 import 'package:graduation/controller/cubit_state.dart';
 
 import '../componants/database.dart';
+import '../ui/myorders.dart';
 
 class GridViewItemWigetCopy extends StatelessWidget {
   GridViewItemWigetCopy({
@@ -23,6 +24,9 @@ class GridViewItemWigetCopy extends StatelessWidget {
     return BlocConsumer<CubitProject, Projectstate>(
       listener: (BuildContext context, state) {},
       builder: (BuildContext context, state) {
+        MyOrders(model: model);
+        CubitProject.itemPoints =
+            double.parse((model.count * model.point).toStringAsFixed(2));
         return Container(
           decoration: const BoxDecoration(
             color: Colors.white,
@@ -125,7 +129,7 @@ class GridViewItemWigetCopy extends StatelessWidget {
                         width: 90,
                         alignment: Alignment.center,
                         child: Text(
-                          "${double.parse((model.count * model.point).toStringAsFixed(2))} P",
+                          "${CubitProject.itemPoints} P",
                           // "${CubitProject.itemPoints}",
                           style: const TextStyle(
                             fontSize: 16,
